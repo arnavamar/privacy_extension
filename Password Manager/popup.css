@@ -1,5 +1,5 @@
 body {
-  background-color: #ffffff;
+  background-color: #E3E2DF;
 }
 
 button {
@@ -28,14 +28,13 @@ button {
     font-size: 18px;
 }
 
-
-<style> 
-
 .relative {
  padding: 10px;
  position: relative;
 } 
        
 
-        html {width: 350px; height: 350px}
-    </style> 
+html {
+    width: 350px; 
+    height: 350px;
+}
