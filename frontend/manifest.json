@@ -1,0 +1,26 @@
+{
+  "manifest_version":2,
+  "name":"ExURL",
+  "version":"2.0.1",
+  "description":"Extension allows our users to exapand shortened urls",
+  "author":"Mahammad Mammadli",
+  "icons":{
+    "128":"icon.png"
+  },
+  
+  "browser_action":{
+    "default_popup":"popup.html",
+    "default_icon":"icon.png",
+    "default_title":"ExURL Extension"
+
+  },
+  
+  "permissions":[],
+  "content_scripts": [
+    {
+      "js": ["popup.js"],
+      "css": ["popup.css"],
+      "matches": ["http://*/*","https://*/*"] 
+    }
+  ]
+}
