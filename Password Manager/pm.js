@@ -7,6 +7,14 @@ sub_btn.addEventListener("click", function(){
 		window.close();
 		window.open(redirect);
 	}
+	else if (password.value == '') {
+                    alert ("Please enter Password"); 
+                }
+     else if (password.value != confirm) { 
+                    alert ("\nPassword did not match: Please try again...") 
+                    return false; 
+                } 
+  
 	else
 	{
 		console.log(2+2);
