@@ -12,7 +12,8 @@
     "webRequestBlocking", 
     "tabs", 
     "storage",
-    "history"
+    "history",
+    "identity"
   ],
 	
   "options_page": "html/options.html",
@@ -44,7 +45,8 @@
   },
 
   "web_accessible_resources": [
-    "html/unsafe.html"
+    "html/unsafe.html",
+    "html/pass_manager.html"
   ],
 
   "icons": {
