@@ -9,38 +9,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             document.querySelectorAll('.search-label').forEach(el => el.style.display = '');
             document.querySelectorAll('.details').forEach(el => el.style.display = '');
             document.getElementById('delete-record').style.display = '';
-            document.getElementById('edit-record').style.display = '';
-
-
-            // change "Save Changes" to "Edit Record"
-            document.getElementById('edit-record').innerText = "Edit Record";
-
             document.getElementById('details-name').innerText = request.payload.name;
             document.getElementById('details-email').innerText = request.payload.email;
             document.getElementById('details-password').innerText = request.payload.password;
         } else {
             console.log("No record found.");
-        }
-    } else if (request.message === 'update_success') {
-        if (request.payload) {
-            document.getElementById('edit-record').innerText = "Changes saved...";
-
-            setTimeout(() => {
-                // enable button
-                document.getElementById('edit-record').disabled = false;
-                // change "Save Changes" to "Edit Record"
-                document.getElementById('edit-record').innerText = "Edit Record";
-                // show 'delete record' button
-                document.getElementById('delete-record').style.display = '';
-            }, 1500);
-
-            // hide input details elements
-            document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
-
-            // show span details elements
-            document.querySelectorAll('.details').forEach(el => el.style.display = '');
-            document.getElementById('details-name').innerText = document.getElementById('update-name').value;
-            document.getElementById('details-email').innerText = document.getElementById('update-email').value;
         }
     } else if (request.message === 'delete_success') {
         if (request.payload) {
@@ -48,20 +21,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
             document.getElementById('delete-record').style.display = 'none';
-            document.getElementById('edit-record').style.display = 'none';
         }
     }
 });
 
-// hide details of search results, delete button, edit text fields
 document.querySelectorAll('.search-label').forEach(el => el.style.display = 'none');
 document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
 document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
 document.getElementById('delete-record').style.display = 'none';
-document.getElementById('edit-record').style.display = 'none';
 
-
-// ADD A RECORD
 document.getElementById('add_form').addEventListener('submit', event => {
     event.preventDefault();
 
@@ -77,7 +45,6 @@ document.getElementById('add_form').addEventListener('submit', event => {
     });
 });
 
-// SEARCH FOR A RECORD
 document.getElementById('search_for_record').addEventListener('click', event => {
     event.preventDefault();
 
@@ -89,45 +56,11 @@ document.getElementById('search_for_record').addEventListener('click', event => 
     });
 });
 
-// EDIT AND SAVE A RECORD
-document.getElementById('edit-record').addEventListener('click', event => {
-    event.preventDefault();
-
-    if (document.getElementById('edit-record').innerText === "Edit Record") {
-        // hide span details elements
-        document.querySelectorAll('.details').forEach((el, i) => i != 2 ? el.style.display = 'none' : null);
-
-        // show input details elements
-        document.querySelectorAll('.updated-details').forEach(el => el.style.display = '');
-
-        document.getElementById('update-name').value = document.getElementById('details-name').innerText;
-        document.getElementById('update-email').value = document.getElementById('details-email').innerText;
-
-        // change edit button text
-        document.getElementById('edit-record').innerText = "Save Changes";
-        // hide 'delete record' button
-        document.getElementById('delete-record').style.display = 'none';
-    } else if (document.getElementById('edit-record').innerText === "Save Changes") {
-        // disable save button
-        document.getElementById('edit-record').disabled = true;
-
-        chrome.runtime.sendMessage({
-            message: 'update',
-            payload: {
-                "name": document.getElementById('update-name').value,
-                "email": document.getElementById('update-email').value,
-                "password": document.getElementById('details-password').value
-            }
-        });
-    }
-});
-
-// DELETE A RECORD
 document.getElementById('delete-record').addEventListener('click', event => {
     event.preventDefault();
 
     chrome.runtime.sendMessage({
         message: 'delete',
-        payload: document.getElementById('details-name').innerText
+        payload: document.getElementById('details-email').innerText
     });
 });

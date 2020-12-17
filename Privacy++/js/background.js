@@ -7,11 +7,11 @@ chrome.runtime.onInstalled.addListener(function(details){
         	localStorage.pass += list[Math.floor(Math.random()*len)];
         }
         window.alert("Username: 'user' & Password to access the password manager: " + localStorage.pass);
-        create_database()
+        create_db()
     }
     else if(details.reason == "update"){
     	window.alert("Your password manager's password is unchanged!");
-        create_database()
+        create_db()
     }
 });
 
@@ -52,15 +52,15 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=> {
 });
 
 let roster = [{
-    "name":"Pass",
-    "email":"test@test.com",
-    "password":"password1"
+    "name":"",
+    "email":"",
+    "password":""
 }];
 
-//lZzbSyioUqKI
+//QpaaVW7jdHbJ
 let db = null;
-function create_database() {
-    const request = window.indexedDB.open('MyTestDB');
+function create_db() {
+    const request = window.indexedDB.open('PassDB');
     request.onerror = function (event) {
         console.log("Problem opening DB.");
     }
@@ -104,7 +104,7 @@ function insert_records(records) {
     }
 }
 
-function get_record(email) {
+function get_record(name) {
   if (db) {
     const get_transaction = db.transaction("roster", "readonly");
     const objectStore = get_transaction.objectStore("roster");
@@ -115,14 +115,14 @@ function get_record(email) {
       get_transaction.onerror = function () {
         console.log("PROBLEM GETTING RECORDS.")
       }
-      let request = objectStore.get(email);
+      let request = objectStore.get(name);
       request.onsuccess = function (event) {
         resolve(event.target.result);
       }
     });
   }
 }
-function update_record(record) {
+/*function update_record(record) {
   if (db) {
     const put_transaction = db.transaction("roster", "readwrite");
     const objectStore = put_transaction.objectStore("roster");
@@ -138,8 +138,8 @@ function update_record(record) {
       objectStore.put(record);
     });
   }
-}
-function delete_record(email) {
+}*/
+function delete_record(name) {
   if (db) {
     const delete_transaction = db.transaction("roster", 
                                              "readwrite");
@@ -153,7 +153,7 @@ function delete_record(email) {
         console.log("PROBLEM DELETE RECORDS.")
         resolve(false);
       }
-      objectStore.delete(email);
+      objectStore.delete(name);
     });
   }
 }
