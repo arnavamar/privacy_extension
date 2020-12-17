@@ -32,14 +32,6 @@ chrome.runtime.onMessage.addListener((request,sender,sendResponse)=> {
                 payload: res
             });
         });
-    } else if (request.message === 'update') {
-        let update_request = update_record(request.payload);
-        update_request.then(res => {
-            chrome.runtime.sendMessage({
-                message: 'update_success',
-                payload: res
-            });
-        });
     } else if (request.message === 'delete') {
         let delete_request = delete_record(request.payload);
         delete_request.then(res => {
@@ -56,6 +48,7 @@ let roster = [{
     "email":"",
     "password":""
 }];
+
 
 let db = null;
 function create_db() {

@@ -64,3 +64,8 @@ document.getElementById('delete-record').addEventListener('click', event => {
         payload: document.getElementById('details-email').innerText
     });
 });
+
+logout.addEventListener("click", event => {
+    event.preventDefault();
+    window.history.back(-1);
+});
