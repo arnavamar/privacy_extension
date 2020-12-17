@@ -57,7 +57,6 @@ let roster = [{
     "password":""
 }];
 
-//QpaaVW7jdHbJ
 let db = null;
 function create_db() {
     const request = window.indexedDB.open('PassDB');
@@ -122,23 +121,7 @@ function get_record(name) {
     });
   }
 }
-/*function update_record(record) {
-  if (db) {
-    const put_transaction = db.transaction("roster", "readwrite");
-    const objectStore = put_transaction.objectStore("roster");
-    return new Promise((resolve, reject) => {
-      put_transaction.oncomplete = function () {
-        console.log("ALL PUT TRANSACTIONS COMPLETE.");
-        resolve(true);
-      }
-      put_transaction.onerror = function () {
-        console.log("PROBLEM UPDATING RECORDS.")
-        resolve(false);
-      }
-      objectStore.put(record);
-    });
-  }
-}*/
+
 function delete_record(name) {
   if (db) {
     const delete_transaction = db.transaction("roster", 
