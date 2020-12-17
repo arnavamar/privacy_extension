@@ -85,3 +85,8 @@ body {
 .login_header {
   font-size: 28px;
 }
+
+.goback {
+  position: absolute;
+  align-self: left;
+}
