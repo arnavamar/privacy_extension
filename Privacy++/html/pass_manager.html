@@ -9,7 +9,7 @@
 		<style>
         	#container {
             	width: 500px;
-            	height: fit-content;
+  				height: 90%;
             	display: flex;
         	}
 
@@ -40,12 +40,16 @@
             	font-size: 18px;
     	    }
     	</style>
+    	<img class="unlock_img" src="/images/pm.png" align="center">
 	</head>
 	<body style="background-color: #E3E2DF;">
+		<div class="goback" align="Left">
+  			<img id="logout" class="logout" src="/images/logout.png" align="Left">
+  			<span class="logouttext">Logout</span>
+  		</div>
 		<div id="container">
         	<div id="add">
-	        	<img class="unlock_img" src="/images/pm.png">
-	            <form id="add_form">
+	            <form id="add_form" style="padding-left: 15px">
 	                <input class="add_rec_input" type="text" name="name" id="name" placeholder="Website">
 	                <br>
 	                <input class="add_rec_input" type="text" name="email" id="email" placeholder="E-mail">
