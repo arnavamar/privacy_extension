@@ -3,6 +3,14 @@ pm.addEventListener('click', function(){
 	window.open('/html/pm.html', "_blank");
 });
 
+var options = document.getElementById('options');
+var help = document.getElementById('help');
+options.addEventListener('click', function(){
+    window.open('/html/options.html', "_blank");
+})
+help.addEventListener('click', function(){
+    window.open('/html/help.html', "_blank");
+})
 /*chrome.runtime.onInstalled.addListener(function(details){
     if(details.reason == "install"){
         var list = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
