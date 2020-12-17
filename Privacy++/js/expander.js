@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let whitelist_https = ["https://bitly.com/", "https://www.rebrandly.com/", "https://short.io/", "https://linklyhq.com/", "https://www.clickmeter.com/", "https://pixelme.me/", "https://www.bl.ink/", "https://cutt.ly/", "https://soo.gd/", "https://tinycc.com/", "https://clkim.com/", "https://tinyurl.com/", "https://t2mio.com/", "https://tiny.ie/", "https://www.shorturl.at/", "https://bit.do/", "https://yourls.org/", "https://adf.ly/", "https://is.gd/"];
     let whitelist_http = ["http://bitly.com/", "http://www.rebrandly.com/", "http://short.io/", "http://linklyhq.com/", "http://www.clickmeter.com/", "http://pixelme.me/", "http://www.bl.ink/", "http://cutt.ly/", "http://soo.gd/", "http://tinycc.com/", "http://clkim.com/", "http://tinyurl.com/", "http://t2mio.com/", "http://tiny.ie/", "http://www.shorturl.at/", "http://bit.do/", "http://yourls.org/", "http://adf.ly/", "http://is.gd/"];
-    let whitelist = ["bitly.com/", "www.rebrandly.com/", "short.io/", "linklyhq.com/", "www.clickmeter.com/", "pixelme.me/", "www.bl.ink/", "cutt.ly/", "soo.gd/", "tinycc.com/", "clkim.com/", "tinyurl.com/", "t2mio.com/", "tiny.ie/", "www.shorturl.at/", "bit.do/", "yourls.org/", "adf.ly/", "is.gd/"];
+    let whitelist = ["bitly.com/", "rebrandly.com/", "short.io/", "linklyhq.com/", "clickmeter.com/", "pixelme.me/", "bl.ink/", "cutt.ly/", "soo.gd/", "tinycc.com/", "clkim.com/", "tinyurl.com/", "t2mio.com/", "tiny.ie/", "shorturl.at/", "bit.do/", "yourls.org/", "adf.ly/", "is.gd/"];
     
     function expandUrl() {
         let link = document.getElementById('inn').value;
