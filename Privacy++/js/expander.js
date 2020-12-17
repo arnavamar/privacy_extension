@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(link){
             let expanded_url = sendLink(link);
         }else{
-            document.getElementById('text').innerHTML = "Invalid Link"
+            document.getElementById('text').innerHTML = "Invalid or not shortned Link"
         }
     }
 
