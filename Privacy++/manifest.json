@@ -20,13 +20,17 @@
 	
   "content_scripts":[
 	  {
-	    "matches":["http://*/*","https://*/*"],
+      "matches":["http://*/*"],
       "exclude_globs":["*://192.168.*.*/*",
         "*://172.16.*.*/*",
         "*://10.*.*.*/*"
       ],
 	    "js": ["js/http.js"]
-	  }
+	  },
+    {
+      "js": ["js/popup.js"],
+      "matches": ["https://*/*"] 
+    }
 	],
 	
   "background": {
