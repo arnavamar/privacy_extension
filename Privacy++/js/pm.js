@@ -20,4 +20,4 @@ goback.addEventListener("click", event => {
     window.history.back(-1);
 });
 
-//0MitFaIGCrbh
+//6skvwOzqwCRw
