@@ -6,8 +6,6 @@ body {
   height: 100%;
   margin: 0;
   display: grid;
-  justify-items: center;
-  align-items: center;
   background-color: #3a3a3a;
   font-family: 'Montserrat';
 }
@@ -20,8 +18,16 @@ body {
   text-align: center;
 }
 
-.unlock_img {
-  align-self: center;
+.logout {
+  position: absolute;
+  top:0px;
+  left:0px; 
+}
+
+.unlock_img{
+  position: relative;
+  top: 0px;
+  left: 200px;
 }
 
 .login_header {
@@ -31,6 +37,7 @@ body {
 button {
   font-family: 'Montserrat';
 }
+
 
 .goback .logouttext {
   visibility: hidden;
@@ -48,6 +55,8 @@ button {
   visibility: visible;
 }
 
-.logout {
-  align:left;
+.logouttext{
+  position: absolute;
+  top:5px;
+  left:35px; 
 }

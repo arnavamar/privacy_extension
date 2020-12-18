@@ -80,6 +80,20 @@ button {
     background-color: #000000;
 }
 
+#bj {
+    font-family: 'Montserrat';
+    font-size: 18px;
+    position: relative;
+    top:120px;
+    left:45px;
+    align-content: center;
+}
+
+#bj:hover {
+  color: #e76e76;
+  background-color: #000000;
+}
+
 #options{
 	align:right;
 }
@@ -101,4 +115,11 @@ button {
   padding-top:100px;
   text-align: center;
   display: none;
+}
+
+.bjs {
+  position: relative;
+  padding-top: 900px;
+  width: 10px;
+  height: 10px;
 }
