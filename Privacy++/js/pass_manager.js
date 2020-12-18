@@ -34,7 +34,6 @@ document.getElementById('add_form').addEventListener('submit', event => {
     event.preventDefault();
 
     const form_data = new FormData(document.getElementById('add_form'));
-
     chrome.runtime.sendMessage({
         message: 'insert',
         payload: [{

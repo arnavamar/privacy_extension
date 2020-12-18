@@ -133,8 +133,3 @@ function delete_record(name) {
     });
   }
 }
-
-
-
-
-
