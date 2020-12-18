@@ -6,32 +6,33 @@
     <body>
     	<img id="logo" src="/icons/shield_64.png" align="left">
     	<p id="title">Privacy++</p>
-    	<div class="option">
-  			<img id="options" src="/images/options.png" align="right">
-  			<span class="optiontext">Options</span>
-  		</div>
   		<div class="option">
     			<img id="help" src="/images/help.png" align="right">
     			<span class="optiontext">Help</span>
   		</div>
-      <div id="start-div">   
-          <button id="pm">Password Manager</button>
-    <button id="lu">Link Unshorter</button>
-  </div>
+        <div id="start-div">   
+            <button id="pm">Password Manager</button>
+            <button id="lu">Link Unshorter</button>
+            <div id="BJS">
+                <button id="bj">BlockJS Status</button>
+                <img id="bjs" src="/images/19_BJs.png" width="25" height="25" style="padding-top: 95px; padding-left: 200px">
+            </div>    
+        </div>
     
     
-  <div id="mm-div">
-          <div class="label" id="label1" >
-            <input id="inn" type="text" placeholder="Paste shorten URL here."/>
-            <button class="sub" id="exp">Expand</button>
-          </div>
-          <div id="resurl">
-              <p id="text"></p>
-          </div>
-      </div>
+        <div id="mm-div">
+            <div class="label" id="label1" >
+                <input id="inn" type="text" placeholder="Paste shorten URL here."/>
+                <button class="sub" id="exp">Expand</button>
+            </div>
+            <div id="resurl">
+                <p id="text"></p>
+            </div>
+        </div>
       
         <script src="/js/popup.js"></script>
-	<script src="/js/expander.js"></script>
+        <script src="/js/expander.js"></script>
+        <script src="/js/blockjs.js"></script>
         <footer id="footer">
           <div id="footer-content">Please visit the help page if you have any query</div>
         </footer>
