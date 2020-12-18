@@ -18,9 +18,7 @@
     "http://*/*",
     "https://*/*"
   ],
-	
-  "options_page": "html/options.html",
-	
+
   "content_scripts":[
 	  {
       "matches":["http://*/*"],
@@ -61,5 +59,3 @@
 	
   "manifest_version": 2
 }
-
-//pkQE8hIPzqJ6
