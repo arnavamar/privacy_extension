@@ -54,7 +54,7 @@ let db = null;
 function create_db() {
     const request = window.indexedDB.open('PassDB');
     request.onerror = function (event) {
-        console.log("Problem opening DB.");
+        console.log("Database encountered an error while loading.");
     }
     request.onupgradeneeded = function (event) {
         db = event.target.result;
@@ -67,7 +67,7 @@ function create_db() {
     }
     request.onsuccess = function (event) {
         db = event.target.result;
-        console.log("DB OPENED.");
+        console.log("DB Accessed.");
         insert_records(roster);
     }
 }
@@ -79,17 +79,17 @@ function insert_records(records) {
       const objectStore = insert_transaction.objectStore("roster");
       return new Promise((resolve, reject) => {
          insert_transaction.oncomplete = function () {
-             console.log("ALL INSERT TRANSACTIONS COMPLETE.");
+             console.log("Insertion complete.");
              resolve(true);
          }
          insert_transaction.onerror = function () {
-             console.log("PROBLEM INSERTING RECORDS.")
+             console.log("Problem encountered while adding data.")
              resolve(false);
          }
-         records.forEach(person => {
-           let request = objectStore.add(person);
+         records.forEach(account => {
+           let request = objectStore.add(account);
            request.onsuccess = function () {
-             console.log("Added: ", person);
+             console.log("Added: ", account);
            }
          });
       });
