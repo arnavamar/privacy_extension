@@ -1,13 +1,13 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.message === 'insert_success') {
         if (request.payload) {
-            document.querySelectorAll('.add_rec_input').forEach(el => el.value = '');
+            document.querySelectorAll('.add_rec_input').forEach(element => element.value = '');
         }
     } else if (request.message === 'get_success') {
         if (request.payload) {
-            document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.search-label').forEach(el => el.style.display = '');
-            document.querySelectorAll('.details').forEach(el => el.style.display = '');
+            document.querySelectorAll('.updated-details').forEach(element => element.style.display = 'none');
+            document.querySelectorAll('.search-label').forEach(element => element.style.display = '');
+            document.querySelectorAll('.details').forEach(element => element.style.display = '');
             document.getElementById('delete-record').style.display = '';
             document.getElementById('details-name').innerText = request.payload.name;
             document.getElementById('details-email').innerText = request.payload.email;
@@ -17,17 +17,17 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
     } else if (request.message === 'delete_success') {
         if (request.payload) {
-            document.querySelectorAll('.search-label').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.search-label').forEach(element => element.style.display = 'none');
+            document.querySelectorAll('.updated-details').forEach(element => element.style.display = 'none');
+            document.querySelectorAll('.details').forEach(element => element.style.display = 'none');
             document.getElementById('delete-record').style.display = 'none';
         }
     }
 });
 
-document.querySelectorAll('.search-label').forEach(el => el.style.display = 'none');
-document.querySelectorAll('.updated-details').forEach(el => el.style.display = 'none');
-document.querySelectorAll('.details').forEach(el => el.style.display = 'none');
+document.querySelectorAll('.search-label').forEach(element => element.style.display = 'none');
+document.querySelectorAll('.updated-details').forEach(element => element.style.display = 'none');
+document.querySelectorAll('.details').forEach(element => element.style.display = 'none');
 document.getElementById('delete-record').style.display = 'none';
 
 document.getElementById('add_form').addEventListener('submit', event => {
