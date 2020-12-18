@@ -16,5 +16,5 @@ bjs_status.addEventListener("click", function() {
         
     };
     setContentsJS(isOff);
-    chrome.tabs.update(tab.id, { url: tab.url });
+    chrome.tabs.reload();
 });
