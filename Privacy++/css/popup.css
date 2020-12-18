@@ -71,7 +71,7 @@ button {
     font-size: 18px;
     position: relative;
     top:110px;
-    right:10px;
+    right:15px;
     align-content: center;
 }
 
@@ -85,7 +85,7 @@ button {
     font-size: 18px;
     position: relative;
     top:120px;
-    left:45px;
+    left:50px;
     align-content: center;
 }
 
@@ -96,6 +96,11 @@ button {
 
 #options{
 	align:right;
+}
+
+.start-div {
+  display: flex;
+  justify-content: center;
 }
 
 .sub{
@@ -120,6 +125,4 @@ button {
 .bjs {
   position: relative;
   padding-top: 900px;
-  width: 10px;
-  height: 10px;
 }
