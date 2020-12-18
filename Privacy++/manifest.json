@@ -6,6 +6,7 @@
   "description": "One stop privacy and security extension",
 	
   "permissions": [
+    "contentSettings",
     "webRequest", 
     "declarativeContent", 
     "activeTab", 
@@ -13,7 +14,9 @@
     "tabs", 
     "storage",
     "history",
-    "identity"
+    "identity",
+    "http://*/*",
+    "https://*/*"
   ],
 	
   "options_page": "html/options.html",
@@ -26,11 +29,7 @@
         "*://10.*.*.*/*"
       ],
 	    "js": ["js/http.js"]
-	  },
-    {
-      "js": ["js/popup.js"],
-      "matches": ["https://*/*"] 
-    }
+	  }
 	],
 	
   "background": {
@@ -62,3 +61,5 @@
 	
   "manifest_version": 2
 }
+
+//pkQE8hIPzqJ6
