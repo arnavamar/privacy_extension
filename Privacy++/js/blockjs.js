@@ -9,8 +9,11 @@ bjs_status.addEventListener("click", function() {
             setting: flag ? "block" : "allow",
             scope: "regular"
         });
-        bj_img.src = `/images/19_BJs${flag ? "":"-off"}.png`
+        bj_img.src = `/images/19_BJs${flag ? "-off":""}.png`
         isOff = !flag;
+        console.log(flag);
+        console.log(`/images/19_BJs${flag ? "-off":""}.png`);
+        
     };
     setContentsJS(isOff);
     chrome.tabs.reload();

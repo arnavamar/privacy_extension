@@ -59,7 +59,7 @@ function create_db() {
     request.onupgradeneeded = function (event) {
         db = event.target.result;
         let objectStore = db.createObjectStore('roster', {
-            keyPath: 'email'
+            keyPath: 'name'
         });
         objectStore.transaction.oncomplete = function (event) {
             console.log("ObjectStore Created.");
